@@ -8,30 +8,30 @@
 }
 
 .r-grid {
-  display: grid;
   grid-template-columns: repeat(4, minmax(1rem, 4.5rem));
-  grid-gap: 1rem;
-  justify-content: center;
-  padding: 0 24px;
+  @apply px-6 grid justify-center gap-4;
+}
+
+footer.r-grid {
+  @apply gap-y-6;
 }
 
 @media (width >= 768px) {
   .r-grid {
     grid-template-columns: repeat(12, minmax(1rem, 4rem));
     grid-gap: clamp(0px, 2.35vw, 2rem);
-    padding: 0 clamp(0px, 8.82vw, 120px);
+    padding-left: clamp(0px, 8.82vw, 120px);
+    padding-right: clamp(0px, 8.82vw, 120px);
   }
 }
 
 input[type='checkbox'] {
-  appearance: none;
+  @apply appearance-none w-4 h-4 bg-no-repeat;
   -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  background: url('../../public/img/checkmark.png') no-repeat;
+  background: url('../../public/img/checkmark.png');
   background-size: 0;
 }
 
 input[type='checkbox']:checked {
-  background-size: contain;
+  @apply bg-contain;
 }

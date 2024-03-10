@@ -1,5 +1,6 @@
 import '@/styles/globals.css'
 
+import Footer from './components/Footer'
 import Header from '@/components/Header'
 import type { Metadata } from 'next'
 
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body className="bg-gray-light">
         <Header />
         {children}
-        <footer className="r-grid bg-black h-[106px] z-20">Hola</footer>
+        <Footer />
       </body>
     </html>
   )
