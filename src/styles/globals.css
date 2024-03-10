@@ -15,7 +15,7 @@
   padding: 0 24px;
 }
 
-@media (width > 768px) {
+@media (width >= 768px) {
   .r-grid {
     grid-template-columns: repeat(12, minmax(1rem, 4rem));
     grid-gap: clamp(0px, 2.35vw, 2rem);

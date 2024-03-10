@@ -20,7 +20,7 @@
   grid-area: subtitle;
 }
 
-@media (width > 768px) {
+@media (width >= 768px) {
   .header-form {
     @apply block;
     grid-template-areas: none;

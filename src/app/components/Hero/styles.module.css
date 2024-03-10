@@ -2,13 +2,13 @@
   @apply col-span-4 md:col-span-6 self-start md:pl-8 pt-8 pb-12;
 }
 
-@media (width > 768px) {
+@media (width >= 768px) {
   .container-form {
     padding-right: clamp(0px, 9.5vw, 13.5rem);
   }
 }
 
-@media (width > 1024px) {
+@media (width >= 1024px) {
   .container-form {
     padding-right: clamp(0px, 15.96vw, 13.5rem);
   }
