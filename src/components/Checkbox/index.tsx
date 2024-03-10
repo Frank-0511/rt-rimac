@@ -2,38 +2,41 @@
 
 import classNames from 'classnames'
 import styles from './styles.module.css'
-import { useState } from 'react'
 
 interface CheckboxProps {
   label: string
+  onChange: (checked: boolean) => void
+  checked: boolean
+  error?: string
 }
 
 const Checkbox = (props: CheckboxProps) => {
-  const [checked, setChecked] = useState(false)
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked)
+    props.onChange(event.target.checked)
   }
 
   return (
-    <div className="flex items-center">
-      <div
-        className={classNames(
-          styles['container-input'],
-          checked && styles['container-input--checked']
-        )}
-      >
-        <input
-          id="link-checkbox"
-          type="checkbox"
-          checked={checked}
-          onChange={handleChange}
-          className={styles.input}
-        />
+    <div>
+      <div className="flex items-center">
+        <div
+          className={classNames(
+            styles['container-input'],
+            props.checked && styles['container-input--checked']
+          )}
+        >
+          <input
+            id="link-checkbox"
+            type="checkbox"
+            checked={props.checked}
+            onChange={handleChange}
+            className={styles.input}
+          />
+        </div>
+        <label htmlFor="link-checkbox" className="ms-2 text-xs font-medium text-gray-900">
+          {props.label}
+        </label>
       </div>
-      <label htmlFor="link-checkbox" className="ms-2 text-xs font-medium text-gray-900">
-        {props.label}
-      </label>
+      <span className="text-xs text-red-600">{props.error}</span>
     </div>
   )
 }
