@@ -1,5 +1,5 @@
 .container-form {
-  @apply col-span-4 md:col-span-6 self-start md:pl-8 pt-8 pb-12;
+  @apply col-span-4 pb-24 md:self-start md:col-span-6 md:pl-8 md:pt-8 md:pb-12;
 }
 
 @media (width >= 768px) {
