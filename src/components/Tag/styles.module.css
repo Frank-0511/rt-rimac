@@ -1,0 +1,8 @@
+.tag {
+  @apply py-1 px-2 rounded-[0.25rem] w-[fit-content];
+}
+
+.tag-promo {
+  background: linear-gradient(86.01deg, #00f4e2 0%, #00ff7f 100%);
+  @apply text-xs md:text-sm leading-4 font-bold tracking-[0.4px] text-left;
+}

@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'BR Sonoma Thin';
+  src: url('/fonts/BR-Sonoma-Thin.otf') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Thin Italic';
+  src: url('/fonts/BR-Sonoma-ThinItalic.otf') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Extra Light';
+  src: url('/fonts/BR-Sonoma-ExtraLight.otf') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Extra Light Italic';
+  src: url('/fonts/BR-Sonoma-ExtraLightItalic.otf') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Light';
+  src: url('/fonts/BR-Sonoma-Light.otf') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Light Italic';
+  src: url('/fonts/BR-Sonoma-LightItalic.otf') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Regular';
+  src: url('/fonts/BR-Sonoma-Regular.otf') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Regular Italic';
+  src: url('/fonts/BR-Sonoma-RegularItalic.otf') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Medium';
+  src: url('/fonts/BR-Sonoma-Medium.otf') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Medium Italic';
+  src: url('/fonts/BR-Sonoma-MediumItalic.otf') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Semi Bold';
+  src: url('/fonts/BR-Sonoma-SemiBold.otf') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Semi Bold Italic';
+  src: url('/fonts/BR-Sonoma-SemiBoldItalic.otf') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Bold';
+  src: url('/fonts/BR-Sonoma-Bold.otf') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Bold Italic';
+  src: url('/fonts/BR-Sonoma-BoldItalic.otf') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Black';
+  src: url('/fonts/BR-Sonoma-Black.otf') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BR Sonoma Black Italic';
+  src: url('/fonts/BR-Sonoma-BlackItalic.otf') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}

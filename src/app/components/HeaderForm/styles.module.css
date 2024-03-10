@@ -1,0 +1,35 @@
+.header-form {
+  @apply grid gap-x-3 gap-y-6;
+  grid-template-areas: 'title image' 'subtitle subtitle';
+  grid-template-columns: 1fr 136px;
+  grid-template-rows: auto;
+}
+
+.title-form {
+  grid-area: title;
+  @apply flex flex-col items-start justify-center;
+}
+
+.image-form {
+  @apply md:hidden;
+  grid-area: image;
+}
+
+.subtitle-form {
+  @apply text-sm tracking-[0.2px] font-semibold pt-6 md:pt-0 border-t border-[#CCD1EE];
+  grid-area: subtitle;
+}
+
+@media (width > 768px) {
+  .header-form {
+    @apply block;
+    grid-template-areas: none;
+    grid-template-columns: none;
+    grid-template-rows: none;
+  }
+
+  .subtitle-form {
+    @apply pt-0 border-none;
+    grid-area: subtitle;
+  }
+}

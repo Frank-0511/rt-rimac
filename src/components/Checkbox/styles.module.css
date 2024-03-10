@@ -1,0 +1,13 @@
+.container-input {
+  @apply w-5 h-5 flex justify-center items-center;
+  @apply border border-solid border-black rounded bg-white;
+}
+
+.container-input--checked {
+  @apply bg-black;
+}
+
+.input {
+  @apply w-4 h-4;
+  @apply text-black bg-gray-100 rounded checked:accent-black;
+}
