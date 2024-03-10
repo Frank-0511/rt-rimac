@@ -20,6 +20,15 @@ footer.r-grid {
   .r-grid {
     grid-template-columns: repeat(12, minmax(1rem, 4rem));
     grid-gap: clamp(0px, 2.35vw, 2rem);
+    padding-left: clamp(0px, 2vw, 120px);
+    padding-right: clamp(0px, 2vw, 120px);
+  }
+}
+
+@media (width >= 1024px) {
+  .r-grid {
+    grid-template-columns: repeat(12, minmax(1rem, 4rem));
+    grid-gap: clamp(0px, 2.35vw, 2rem);
     padding-left: clamp(0px, 8.82vw, 120px);
     padding-right: clamp(0px, 8.82vw, 120px);
   }

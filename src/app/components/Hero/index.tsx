@@ -1,5 +1,6 @@
 import Button from '@/components/Button'
 import Checkbox from '@/components/Checkbox'
+import DropdownWithInput from '@/components/DropdownWithInput'
 import HeaderForm from '../HeaderForm'
 import HeroImage from '@public/img/hero.png'
 import Image from 'next/image'
@@ -13,10 +14,19 @@ const Hero = () => {
       <div className="hidden md:block md:col-span-6 md:self-start md:pt-8 md:pb-12">
         <Image src={HeroImage} alt="Hero image" width={480} height={560} />
       </div>
+
       <div className={styles['container-form']}>
         <div className="grid gap-6">
           <HeaderForm />
+
           <div className="grid gap-4">
+            <DropdownWithInput
+              options={[
+                { value: 'dni', label: 'DNI' },
+                { value: 'ruc', label: 'RUC' }
+              ]}
+              label="Nro. de documento"
+            />
             <Input label="Celular" type="tel" placeholder="999-999-999" />
           </div>
 

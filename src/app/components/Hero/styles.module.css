@@ -4,12 +4,18 @@
 
 @media (width >= 768px) {
   .container-form {
-    padding-right: clamp(0px, 9.5vw, 13.5rem);
+    padding-right: clamp(0px, 2vw, 10rem);
   }
 }
 
 @media (width >= 1024px) {
   .container-form {
-    padding-right: clamp(0px, 15.96vw, 13.5rem);
+    padding-right: clamp(0px, 7vw, 10rem);
+  }
+}
+
+@media (width >= 1280px) {
+  .container-form {
+    padding-right: clamp(0px, 11.7vw, 10rem);
   }
 }
