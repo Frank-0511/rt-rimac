@@ -40,7 +40,7 @@ footer.r-grid {
 input[type='checkbox'] {
   @apply appearance-none w-4 h-4 bg-no-repeat;
   -webkit-appearance: none;
-  background: url('../../public/img/checkmark.png');
+  background: url('/img/checkmark.png');
 }
 
 input[type='checkbox']:checked {
@@ -58,7 +58,7 @@ input:-webkit-autofill:active {
 }
 
 .blur-right-mobile {
-  background-image: url('../../public/img/blur-asset-right-mobile.png');
+  background-image: url('/img/blur-asset-right-mobile.png');
   @apply block md:hidden -z-10;
   @apply bg-cover absolute top-0 right-0 w-[352px] h-[304px];
 }
