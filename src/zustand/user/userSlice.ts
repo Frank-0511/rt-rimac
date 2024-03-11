@@ -6,6 +6,9 @@ export interface UserState {
   }
   privacyPolicies: boolean
   commercialCommunicationsPolicy: boolean
+  name: string
+  lastName: string
+  birthDay: Date
 }
 
 export const initialState: UserState = {
@@ -15,7 +18,10 @@ export const initialState: UserState = {
     numberDocument: ''
   },
   privacyPolicies: false,
-  commercialCommunicationsPolicy: false
+  commercialCommunicationsPolicy: false,
+  name: '',
+  lastName: '',
+  birthDay: new Date()
 }
 
 export const userSlice = (set: any) => ({

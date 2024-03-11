@@ -3,12 +3,12 @@ import { UserState, userSlice } from './userSlice'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export type RTStore = {
+export type UserStore = {
   user: UserState
   setUser: (user: Partial<UserState>) => void
 }
 
-export const useRTStore = create<RTStore>()(
+export const useUserStore = create<UserStore>()(
   persist(
     (set) => ({
       ...userSlice(set)

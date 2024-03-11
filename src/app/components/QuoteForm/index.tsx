@@ -2,28 +2,17 @@
 
 import { Controller, useForm } from 'react-hook-form'
 import { FormData, FormDataSchema } from './schema'
-import { RTStore, useRTStore } from '@/zustand/store'
-import { useEffect, useState } from 'react'
 
 import Button from '@/components/Button'
 import Checkbox from '@/components/Checkbox'
 import DropdownWithInput from '@/components/DropdownWithInput'
 import Input from '@/components/Input'
 import Link from 'next/link'
-import { initialState } from '@/zustand/userSlice'
-import { useRouter } from 'next/navigation'
-import useStore from '@/zustand/useStore'
+import useGetAndSaveUser from '@/hooks/useGetAndSaveUser'
 import { zodResolver } from '@hookform/resolvers/zod'
 
 const QuoteForm = () => {
-  const RTStore = useStore<RTStore, RTStore>(useRTStore, (state: any) => state, {
-    setUser: () => {},
-    user: initialState
-  })
-
-  const { setUser } = RTStore
-
-  const router = useRouter()
+  const { handleSubmitUser } = useGetAndSaveUser()
 
   const { handleSubmit, control, setValue, trigger } = useForm<FormData>({
     resolver: zodResolver(FormDataSchema),
@@ -45,8 +34,7 @@ const QuoteForm = () => {
   }
 
   const onSubmit = (data: FormData) => {
-    setUser(data)
-    router.push('/plans')
+    handleSubmitUser(data)
   }
 
   return (
@@ -113,7 +101,7 @@ const QuoteForm = () => {
             />
           )}
         />
-        <Link href="/terms">
+        <Link href="/">
           <span className="text-xs font-semibold underline">Aplican Términos y Condiciones</span>
         </Link>
       </div>
