@@ -19,7 +19,15 @@ const config: Config = {
         slate: {
           blue: '#5E6488'
         },
-        primary: '#03050F'
+        primary: '#03050F',
+        dark: {
+          navy: {
+            blue: '#141938'
+          }
+        },
+        blue: {
+          gray: '#7981B2'
+        }
       },
       fontSize: {
         xs: ['0.75rem', '1rem'],

@@ -1,31 +1,38 @@
+import usePlansStore, { PlansStore, initialState } from '@/zustand/plans/PlansStore'
+
 import CheckMark from '@public/img/checkmark.png'
 import Image from 'next/image'
-import { useState } from 'react'
+import useStore from '@/zustand/useStore'
 
 type Option = {
-  icon: JSX.Element
+  id: string | null
+  icon: JSX.Element | null
   title: string
   subtitle: string
 }
 
 const CardCheckGroup: React.FC<{ options: Option[] }> = ({ options }) => {
-  const [selected, setSelected] = useState<number | null>(null)
+  const { data: PlansStore } = useStore<PlansStore, PlansStore>(
+    usePlansStore,
+    (state: any) => state,
+    initialState
+  )
 
-  const handleSelect = (index: number) => {
-    setSelected(index)
+  const { selectedRecipient, setSelectedRecipient } = PlansStore
+
+  const handleSelect = (item: Option) => {
+    setSelectedRecipient(item)
   }
 
   return (
     <div className="col-span-full w-full grid grid-rows-2 gap-6 md:grid-rows-1 md:grid-cols-2 md:gap-8">
       {options.map((option, index) => (
         <Card
-          key={option.title}
+          key={option.id}
           index={index}
-          selected={selected === index}
+          selected={selectedRecipient.id === option.id}
           onClick={handleSelect}
-          icon={option.icon}
-          title={option.title}
-          subtitle={option.subtitle}
+          item={option}
         />
       ))}
     </div>
@@ -37,27 +44,23 @@ export default CardCheckGroup
 const Card: React.FC<{
   index: number
   selected: boolean
-  icon: JSX.Element
-  title: string
-  subtitle: string
-  onClick: (index: number) => void
-}> = ({ index, selected, icon, title, subtitle, onClick }) => {
-  const borderColor = selected ? 'black' : 'white'
-
+  item: Option
+  onClick: (item: Option) => void
+}> = ({ index, selected, item, onClick }) => {
   return (
     <div
-      className={`row-span-1 h-[160px] md:justify-self-${index === 0 ? 'end' : 'start'} md:w-[256px] md:h-[212px] md:col-span-1 border-solid border-[3px] border-${borderColor} bg-white rounded-3xl flex flex-col pt-4 px-6 pb-10 cursor-pointer`}
-      onClick={() => onClick(index)}
+      className={`row-span-1 h-[160px] md:justify-self-${index === 0 ? 'end' : 'start'} md:w-[256px] md:h-[212px] md:col-span-1 ${selected ? 'border-primary' : 'border-white'} border-solid border-[3px] bg-white rounded-3xl flex flex-col pt-4 px-6 pb-10 cursor-pointer`}
+      onClick={() => onClick(item)}
     >
       <div className="w-full flex justify-end">
         <Checkmark selected={selected} />
       </div>
       <div className="flex flex-col gap-2 items-start">
         <div className="flex items-center gap-2 md:flex-col md:items-start">
-          {icon}
-          <h3 className="font-lato font-bold text-xl text-[#141938]">{title}</h3>
+          {item.icon}
+          <h3 className="font-lato font-bold text-xl text-dark-navy-blue">{item.title}</h3>
         </div>
-        <p className="font-lato text-xs text-[#141938]">{subtitle}</p>
+        <p className="font-lato text-xs text-dark-navy-blue">{item.subtitle}</p>
       </div>
     </div>
   )

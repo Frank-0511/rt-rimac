@@ -29,8 +29,8 @@ const AddUserLightIcon = memo((props: SvgIconProps) => {
           y2="54.4398"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.272135" stop-color="#34263B" />
-          <stop offset="0.658079" stop-color="#13172C" />
+          <stop offset="0.272135" stopColor="#34263B" />
+          <stop offset="0.658079" stopColor="#13172C" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_12_156295"
@@ -40,8 +40,8 @@ const AddUserLightIcon = memo((props: SvgIconProps) => {
           y2="44.4506"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.35" stop-color="#F7052D" />
-          <stop offset="0.85" stop-color="#CA5AFA" />
+          <stop offset="0.35" stopColor="#F7052D" />
+          <stop offset="0.85" stopColor="#CA5AFA" />
         </linearGradient>
       </defs>
     </svg>

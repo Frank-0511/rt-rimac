@@ -8,7 +8,7 @@ export interface UserState {
   commercialCommunicationsPolicy: boolean
   name: string
   lastName: string
-  birthDay: Date
+  birthDay: string
 }
 
 export const initialState: UserState = {
@@ -21,7 +21,7 @@ export const initialState: UserState = {
   commercialCommunicationsPolicy: false,
   name: '',
   lastName: '',
-  birthDay: new Date()
+  birthDay: ''
 }
 
 export const userSlice = (set: any) => ({

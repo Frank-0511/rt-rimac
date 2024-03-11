@@ -9,7 +9,7 @@ interface StepperProps {
 }
 
 const Stepper: React.FC<StepperProps> = ({ className }) => {
-  const StepperStore = useStore<StepperStore, StepperStore>(
+  const { data: StepperStore } = useStore<StepperStore, StepperStore>(
     useStepperStore,
     (state: any) => state,
     {
@@ -40,12 +40,12 @@ const Step: React.FC<{ active: boolean; label: string; onClick?: () => void; ind
     <div className={`flex items-center cursor-pointer gap-4 `} onClick={onClick}>
       <div
         className={`w-8 h-8 rounded-full border  flex justify-center items-center ${
-          active ? 'bg-[#4F4FFF] border-[#4F4FFF]' : 'bg-transparent border-[#7981B2]'
+          active ? 'bg-[#4F4FFF] border-[#4F4FFF]' : 'bg-transparent border-blue-gray'
         }`}
       >
-        <p className={`${!active ? 'text-[#7981B2]' : 'text-white font-bold'}`}>{index}</p>
+        <p className={`${!active ? 'text-blue-gray' : 'text-white font-bold'}`}>{index}</p>
       </div>
-      <p className={`text-sm ${active ? 'text-primary font-bold' : 'text-[#7981B2]'}`}>{label}</p>
+      <p className={`text-sm ${active ? 'text-primary font-bold' : 'text-blue-gray'}`}>{label}</p>
     </div>
   )
 }

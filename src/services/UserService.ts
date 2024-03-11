@@ -1,4 +1,4 @@
-import { getUser } from '@/utils/UserAPI'
+import { getUser } from '@/apis/UserAPI'
 
 const UserService = {
   async getUserData() {

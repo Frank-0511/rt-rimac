@@ -7,10 +7,11 @@ import ErrorFallback from '@/components/ErrorFallback'
 import PlansContainer from './components/PlansContainer'
 import Stepper from './components/Stepper'
 import StepperMobile from './components/StepperMobile'
+import useGetPlans from '@/hooks/useGetPlans'
 import useStore from '@/zustand/useStore'
 
 export default function Plans() {
-  const StepperStore = useStore<StepperStore, StepperStore>(
+  const { data: StepperStore, loading } = useStore<StepperStore, StepperStore>(
     useStepperStore,
     (state: any) => state,
     {
@@ -18,6 +19,8 @@ export default function Plans() {
       setActiveStep: () => {}
     }
   )
+
+  useGetPlans({ loadingStepper: loading })
 
   const { activeStep } = StepperStore
 

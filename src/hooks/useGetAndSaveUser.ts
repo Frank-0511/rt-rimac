@@ -6,9 +6,13 @@ import { initialState } from '@/zustand/user/userSlice'
 import { useRouter } from 'next/navigation'
 import useStore from '@/zustand/useStore'
 
-const useGetAndSaveUser = () => {
+interface UseGetAndSaveUserReturn {
+  handleSubmitUser: (data: FormData) => Promise<void>
+}
+
+const useGetAndSaveUser = (): UseGetAndSaveUserReturn => {
   const router = useRouter()
-  const UserStore = useStore<UserStore, UserStore>(useUserStore, (state: any) => state, {
+  const { data: UserStore } = useStore<UserStore, UserStore>(useUserStore, (state: any) => state, {
     setUser: () => {},
     user: initialState
   })

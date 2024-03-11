@@ -29,7 +29,7 @@ const StepperMobile = ({ className }: StepperMobileProps) => {
             >
               <BackIcon width={24} height={24} color="#A9AFD9" />
             </button>
-            <h1 className="ml-4 text-xs font-black font-lato text-[#141938] w-max">
+            <h1 className="ml-4 text-xs font-black font-lato text-dark-navy-blue w-max">
               Paso {currentStep} de 2
             </h1>
           </div>
