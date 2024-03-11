@@ -1,16 +1,28 @@
 .main {
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 235.33px);
   @apply relative md:pb-16;
 }
 
 .blur-left {
   background-image: url('../../public/img/blur-asset-left.png');
-  @apply hidden md:block;
+  @apply hidden md:block -z-10;
   @apply bg-cover absolute bottom-0 left-0 w-[432px] h-[768px];
+}
+
+.blur-left-mobile {
+  background-image: url('../../public/img/blur-asset-left-mobile.png');
+  @apply block md:hidden -z-10;
+  @apply bg-cover absolute bottom-0 left-0 w-[256px] h-[304px];
 }
 
 .blur-right {
   background-image: url('../../public/img/blur-asset-right.png');
-  @apply hidden md:block;
+  @apply hidden md:block -z-10;
   @apply bg-cover absolute bottom-0 right-0 w-[432px] h-[768px];
+}
+
+@media (width >= 768px) {
+  .main {
+    min-height: calc(100vh - 170px);
+  }
 }

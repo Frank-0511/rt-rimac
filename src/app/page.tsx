@@ -14,6 +14,7 @@ export default function Home() {
         <main className={classNames('r-grid', styles.main)}>
           <div className={styles['blur-left']}></div>
           <div className={styles['blur-right']}></div>
+          <div className={styles['blur-left-mobile']}></div>
           <Hero />
         </main>
       </ErrorBoundary>

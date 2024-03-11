@@ -1,8 +1,9 @@
 import '@/styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 
-import Footer from './components/Footer'
 import Header from '@/components/Header'
 import type { Metadata } from 'next'
+import { ToastContainer } from 'react-toastify'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,9 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gray-light">
+      <body className="bg-gray-light relative">
         <Header />
         {children}
+        <ToastContainer />
+
+        <div className="blur-right-mobile"></div>
       </body>
     </html>
   )

@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['BR Sonoma', 'sans-serif']
+        sans: ['BR Sonoma', 'sans-serif'],
+        lato: ['Lato', 'sans-serif']
       },
       colors: {
         gray: {
@@ -26,7 +27,8 @@ const config: Config = {
         lg: ['1.125rem', '1.25rem'],
         xl: ['1.25rem', '1.5rem'],
         '2xl': ['1.75rem', '2.25rem'],
-        '3xl': ['2rem', '1.25']
+        '3xl': ['2rem', '1.25'],
+        '5xl': ['2.5rem', '3rem']
       }
     }
   },
