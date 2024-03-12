@@ -30,14 +30,13 @@ const Stepper: React.FC<StepperProps> = ({ className }) => {
   )
 }
 
-const Step: React.FC<{ active: boolean; label: string; onClick?: () => void; index: number }> = ({
+const Step: React.FC<{ active: boolean; label: string; index: number }> = ({
   active,
   label,
-  onClick,
   index
 }) => {
   return (
-    <div className={`flex items-center cursor-pointer gap-4 `} onClick={onClick}>
+    <div className={`flex items-center gap-4 `}>
       <div
         className={`w-8 h-8 rounded-full border  flex justify-center items-center ${
           active ? 'bg-[#4F4FFF] border-[#4F4FFF]' : 'bg-transparent border-blue-gray'

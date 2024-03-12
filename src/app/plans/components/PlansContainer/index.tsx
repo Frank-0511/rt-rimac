@@ -9,9 +9,11 @@ import BackIcon from '@/components/icons/BackIcon'
 import CardCheckGroup from '../CardCheckGroup'
 import { initialState } from '@/zustand/user/userSlice'
 import { listRecipients } from '@/data'
+import { useRouter } from 'next/navigation'
 import useStore from '@/zustand/useStore'
 
 const PlansContainer = () => {
+  const router = useRouter()
   const { data: UserStore, loading } = useStore<UserStore, UserStore>(
     useUserStore,
     (state: any) => state,
@@ -33,12 +35,18 @@ const PlansContainer = () => {
 
   const { selectedRecipient } = PlansStore
 
+  const handleBack = () => {
+    router.push('/')
+  }
+
   return (
     <>
       <div className="r-grid pt-8 md:pt-10 lg:pb-20">
-        <div className="col-span-full hidden md:flex items-center gap-2">
-          <BackIcon />
-          <span className="text-[#4F4FFF] text-lg font-bold">Volver</span>
+        <div className="col-span-full hidden md:flex">
+          <button className="flex items-center gap-2 pb-8" onClick={handleBack}>
+            <BackIcon />
+            <span className="text-[#4F4FFF] text-lg font-bold">Volver</span>
+          </button>
         </div>
         <div className="col-span-full justify-self-center">
           <div className="w-full md:w-[544px] text-center">

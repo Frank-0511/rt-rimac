@@ -3,6 +3,7 @@ import usePlansStore, {
   PlansStore,
   initialState as initialStatePlan
 } from '@/zustand/plans/PlansStore'
+import useStepperStore, { StepperStore } from '@/zustand/stepper/StepperStore'
 
 import BackIcon from '@/components/icons/BackIcon'
 import FamilyIcon from '@/components/icons/FamilyIcon'
@@ -21,14 +22,30 @@ const SummaryContainer = () => {
     initialStatePlan
   )
 
+  const { data: StepperStore } = useStore<StepperStore, StepperStore>(
+    useStepperStore,
+    (state: any) => state,
+    {
+      activeStep: 1,
+      setActiveStep: () => {}
+    }
+  )
+
+  const { setActiveStep } = StepperStore
   const { user } = UserStore
   const { selectedPlan } = PlansStore
 
+  const handleBack = () => {
+    setActiveStep(1)
+  }
+
   return (
     <div className="r-grid pt-8 md:pt-16 !gap-y-0">
-      <div className="col-span-full hidden md:flex items-center gap-2 pb-8">
-        <BackIcon />
-        <span className="text-[#4F4FFF] text-lg font-bold">Volver</span>
+      <div className="col-span-full hidden md:flex">
+        <button className="flex items-center gap-2 pb-8" onClick={handleBack}>
+          <BackIcon />
+          <span className="text-[#4F4FFF] text-lg font-bold">Volver</span>
+        </button>
       </div>
       <div className="col-span-full pb-10 md:pb-12">
         <h2 className="text-dark-navy-blue font-lato text-3xl md:text-5xl font-bold">
