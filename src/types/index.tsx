@@ -5,8 +5,11 @@ export type SvgIconProps = {
   className?: string
 }
 
+export const ForMeRecipient = 'for-me'
+export const ForSomeoneElseRecipient = 'for-someone-else'
+
 export type Recipient = {
-  id: string | null
+  id: typeof ForMeRecipient | typeof ForSomeoneElseRecipient | null
   icon: JSX.Element | null
   title: string
   subtitle: string

@@ -1,6 +1,7 @@
 import usePlansStore, { Plan, PlansStore, initialState } from '@/zustand/plans/PlansStore'
 import useStepperStore, { StepperStore } from '@/zustand/stepper/StepperStore'
 
+import { ForMeRecipient } from '@/types'
 import HomeLightIcon from '@/components/icons/HomeLightIcon'
 import HospitalLightIcon from '@/components/icons/HospitalLightIcon'
 import useStore from '@/zustand/useStore'
@@ -29,7 +30,7 @@ const CardPlan: React.FC<CardPlanProps> = ({ plan, index, className }) => {
   )
   const { setActiveStep } = StepperStore
 
-  const { setSelectedPlan } = PlansStore
+  const { setSelectedPlan, selectedRecipient } = PlansStore
 
   const handleSelectedPlan = () => {
     setSelectedPlan(plan)
@@ -49,7 +50,7 @@ const CardPlan: React.FC<CardPlanProps> = ({ plan, index, className }) => {
             <div className="flex flex-col gap-1">
               <span className="text-blue-gray text-xs font-lato font-black">Costo del plan</span>
               <span className="text-dark-navy-blue text-xl font-lato font-black">
-                ${price} al mes
+                ${selectedRecipient.id === ForMeRecipient ? price : price * 0.95} al mes
               </span>
             </div>
           </div>

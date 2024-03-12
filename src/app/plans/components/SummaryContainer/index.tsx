@@ -7,6 +7,7 @@ import useStepperStore, { StepperStore } from '@/zustand/stepper/StepperStore'
 
 import BackIcon from '@/components/icons/BackIcon'
 import FamilyIcon from '@/components/icons/FamilyIcon'
+import { ForMeRecipient } from '@/types'
 import { initialState } from '@/zustand/user/userSlice'
 import useStore from '@/zustand/useStore'
 
@@ -33,7 +34,7 @@ const SummaryContainer = () => {
 
   const { setActiveStep } = StepperStore
   const { user } = UserStore
-  const { selectedPlan } = PlansStore
+  const { selectedPlan, selectedRecipient } = PlansStore
 
   const handleBack = () => {
     setActiveStep(1)
@@ -79,7 +80,11 @@ const SummaryContainer = () => {
             <h3 className="font-lato font-bold text-base text-dark-navy-blue">Plan elegido</h3>
             <span className="font-lato text-sm text-dark-navy-blue">{selectedPlan.name}</span>
             <span className="font-lato text-sm text-dark-navy-blue">
-              Costo del Plan: ${selectedPlan.price} al mes
+              Costo del Plan: $
+              {selectedRecipient.id === ForMeRecipient
+                ? selectedPlan.price
+                : selectedPlan.price * 0.95}{' '}
+              al mes
             </span>
           </div>
         </div>

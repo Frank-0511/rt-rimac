@@ -10,7 +10,7 @@ export const listRecipients: Recipient[] = [
     subtitle: 'Cotiza tu seguro de salud y agrega familiares si así lo deseas.'
   },
   {
-    id: 'for someone else',
+    id: 'for-someone-else',
     icon: <AddUserLightIcon />,
     title: 'Para alguien más',
     subtitle: 'Realiza una cotización para uno de tus familiares o cualquier persona.'
