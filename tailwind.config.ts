@@ -27,7 +27,8 @@ const config: Config = {
         },
         blue: {
           gray: '#7981B2'
-        }
+        },
+        light: { steel: { blue: '#D7DBF5' } }
       },
       fontSize: {
         xs: ['0.75rem', '1rem'],

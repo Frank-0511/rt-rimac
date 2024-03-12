@@ -17,14 +17,14 @@ const Stepper: React.FC<StepperProps> = ({ className }) => {
       setActiveStep: () => {}
     }
   )
-  const { activeStep, setActiveStep } = StepperStore
+  const { activeStep } = StepperStore
 
   return (
-    <div className={`w-full bg-[#EDEFFC] flex justify-center py-4 ${className}`}>
+    <div className={`w-full bg-[#EDEFFC] justify-center py-4 ${className}`}>
       <div className="flex flex-row justify-between items-center px-16 gap-4">
-        <Step active={activeStep === 1} onClick={() => setActiveStep(1)} label="Paso 1" index={1} />
+        <Step active={activeStep === 1} label="Paso 1" index={1} />
         <StepIndicatorIcon />
-        <Step active={activeStep === 2} onClick={() => setActiveStep(2)} label="Paso 2" index={2} />
+        <Step active={activeStep === 2} label="Paso 2" index={2} />
       </div>
     </div>
   )

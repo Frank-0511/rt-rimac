@@ -25,17 +25,19 @@ const initialStatePlan = {
   age: 0
 }
 
+export const initialStateRecipient = {
+  id: null,
+  icon: null,
+  title: '',
+  subtitle: ''
+}
+
 export const initialState = {
   listPlans: [],
   setListPlans: () => {},
   selectedPlan: initialStatePlan,
   setSelectedPlan: () => {},
-  selectedRecipient: {
-    id: null,
-    icon: null,
-    title: '',
-    subtitle: ''
-  },
+  selectedRecipient: initialStateRecipient,
   setSelectedRecipient: () => {}
 }
 

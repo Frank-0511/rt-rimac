@@ -7,6 +7,7 @@ import ErrorFallback from '@/components/ErrorFallback'
 import PlansContainer from './components/PlansContainer'
 import Stepper from './components/Stepper'
 import StepperMobile from './components/StepperMobile'
+import SummaryContainer from './components/SummaryContainer'
 import useGetPlans from '@/hooks/useGetPlans'
 import useStore from '@/zustand/useStore'
 
@@ -26,10 +27,11 @@ export default function Plans() {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <main>
+      <main className="">
         <Stepper className="hidden md:flex" />
         <StepperMobile className="flex md:hidden" />
         {activeStep === 1 && <PlansContainer />}
+        {activeStep === 2 && <SummaryContainer />}
       </main>
     </ErrorBoundary>
   )

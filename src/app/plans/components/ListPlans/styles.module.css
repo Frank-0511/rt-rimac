@@ -1,0 +1,4 @@
+.container-plans {
+  @apply col-span-full gap-8 justify-self-center hidden lg:grid;
+  grid-template-columns: repeat(3, minmax(0, 288px));
+}

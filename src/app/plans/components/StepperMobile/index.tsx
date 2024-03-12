@@ -1,22 +1,35 @@
+import useStepperStore, { StepperStore } from '@/zustand/stepper/StepperStore'
+
 import BackIcon from '@/components/icons/BackIcon'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import useStore from '@/zustand/useStore'
 
 interface StepperMobileProps {
   className?: string
 }
 
 const StepperMobile = ({ className }: StepperMobileProps) => {
-  const [currentStep, setCurrentStep] = useState(1)
+  const { data: StepperStore } = useStore<StepperStore, StepperStore>(
+    useStepperStore,
+    (state: any) => state,
+    {
+      activeStep: 1,
+      setActiveStep: () => {}
+    }
+  )
+  const { activeStep, setActiveStep } = StepperStore
+
   const router = useRouter()
 
   const handlePrevious = () => {
-    if (currentStep === 1) {
+    if (activeStep === 1) {
       router.push('/')
     } else {
-      setCurrentStep((prev) => prev - 1)
+      setActiveStep(1)
     }
   }
+
+  if (activeStep === 2) return null
 
   return (
     <div className={`w-full flex flex-col ${className}`}>
@@ -30,24 +43,24 @@ const StepperMobile = ({ className }: StepperMobileProps) => {
               <BackIcon width={24} height={24} color="#A9AFD9" />
             </button>
             <h1 className="ml-4 text-xs font-black font-lato text-dark-navy-blue w-max">
-              Paso {currentStep} de 2
+              Paso {activeStep} de 2
             </h1>
           </div>
           <div
-            className="bg-[#D7DBF5] rounded-full h-[6px] w-full overflow-hidden"
+            className="bg-light-steel-blue rounded-full h-[6px] w-full overflow-hidden"
             style={{ width: `100%` }}
           >
             <div
               className="bg-[#4F4FFF] rounded-full h-[6px] w-10"
               style={{
-                width: currentStep === 2 ? '100%' : '10px',
+                width: activeStep === 2 ? '100%' : '10px',
                 transition: 'width 0.5s ease-in-out'
               }}
             />
           </div>
         </div>
         <div className="flex justify-start">
-          <hr className="w-full h-[1px] bg-[#D7DBF5]" />
+          <hr className="w-full h-[1px] bg-light-steel-blue" />
         </div>
       </div>
     </div>

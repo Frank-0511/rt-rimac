@@ -1,4 +1,11 @@
 import { UserStore, useUserStore } from '@/zustand/user/userStore'
+import usePlansStore, {
+  Plan,
+  PlansStore,
+  initialState as initialStatePlans,
+  initialStateRecipient
+} from '@/zustand/plans/PlansStore'
+import useStepperStore, { StepperStore } from '@/zustand/stepper/StepperStore'
 
 import { FormData } from '@/app/components/QuoteForm/schema'
 import UserService from '@/services/UserService'
@@ -17,11 +24,33 @@ const useGetAndSaveUser = (): UseGetAndSaveUserReturn => {
     user: initialState
   })
 
+  const { data: StepperStore } = useStore<StepperStore, StepperStore>(
+    useStepperStore,
+    (state: any) => state,
+    {
+      activeStep: 1,
+      setActiveStep: () => {}
+    }
+  )
+
+  const { data: PlansStore } = useStore<PlansStore, PlansStore>(
+    usePlansStore,
+    (state: any) => state,
+    initialStatePlans
+  )
+
+  const { setActiveStep } = StepperStore
+
   const { setUser } = UserStore
+
+  const { setSelectedPlan, setSelectedRecipient } = PlansStore
 
   const handleSubmitUser = async (data: FormData) => {
     const userData = await UserService.getUserData()
     setUser({ ...data, ...userData })
+    setActiveStep(1)
+    setSelectedRecipient(initialStateRecipient)
+    setSelectedPlan({} as Plan)
     router.push('/plans')
   }
   return {
