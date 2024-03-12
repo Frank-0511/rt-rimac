@@ -42,7 +42,7 @@ const PlansContainer = () => {
   return (
     <>
       <div className="r-grid pt-8 md:pt-10 lg:pb-20">
-        <div className="col-span-full hidden md:flex">
+        <div className="col-span-full hidden md:flex ml-24">
           <button className="flex items-center gap-2 pb-8" onClick={handleBack}>
             <BackIcon />
             <span className="text-[#4F4FFF] text-lg font-bold">Volver</span>
