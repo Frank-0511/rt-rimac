@@ -41,7 +41,7 @@ const SummaryContainer = () => {
   }
 
   return (
-    <div className="r-grid pt-8 md:pt-16 !gap-y-0">
+    <div className="r-grid pt-8 md:pt-16 !gap-y-0 ml-24 mr-[131px]">
       <div className="col-span-full hidden md:flex">
         <button className="flex items-center gap-2 pb-8" onClick={handleBack}>
           <BackIcon />
