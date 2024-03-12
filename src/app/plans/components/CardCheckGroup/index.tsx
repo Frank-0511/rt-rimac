@@ -2,6 +2,7 @@ import usePlansStore, { PlansStore, initialState } from '@/zustand/plans/PlansSt
 
 import CheckMark from '@public/img/checkmark.png'
 import Image from 'next/image'
+import { Recipient } from '@/types'
 import useStore from '@/zustand/useStore'
 
 type Option = {
@@ -21,7 +22,7 @@ const CardCheckGroup: React.FC<{ options: Option[] }> = ({ options }) => {
   const { selectedRecipient, setSelectedRecipient } = PlansStore
 
   const handleSelect = (item: Option) => {
-    setSelectedRecipient(item)
+    if (item) setSelectedRecipient(item as Recipient)
   }
 
   return (
